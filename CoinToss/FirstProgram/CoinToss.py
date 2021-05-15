@@ -6,3 +6,9 @@ print("Hello, and welcome to our coin toss program.")
 
 our_number = random.random()
 print("Our first number is: ",our_number)
+
+if our_number < 0.5 :
+    print("Heads")
+else:
+    print("Tails")
+        
