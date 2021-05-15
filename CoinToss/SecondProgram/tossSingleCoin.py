@@ -7,5 +7,9 @@ def toss_coin():    # Toss a single coin and see if it comes up heads or tails.
 
     if our_number < 0.5 :
         print("Heads")
+        heads = True
     else:
         print("Tails")
+        heads = False
+    
+    return heads
