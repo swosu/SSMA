@@ -4,7 +4,7 @@ import math
 import time
 
 print('start of csv code')
-with open('eggs.csv', 'w', newline='') as csvfile:
+with open('eggs10K.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
     #spamwriter = csv.writer(csvfile, delimiter=' ',
     #                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
@@ -13,8 +13,8 @@ with open('eggs.csv', 'w', newline='') as csvfile:
     'possible balanced outcomes','calculated percentage','observed percentage,',
     'percentage error','time in seconds'])
 
-for batch_size in range(2,14,2):
-    repeat_count = 1000000
+for batch_size in range(2,252,2):
+    repeat_count = 10000
     balanced_head_count = batch_size / 2
     possible_outcomes_count = pow(2, batch_size)
     balanced_outcomes_count_part_1 = math.factorial(batch_size)
@@ -50,7 +50,7 @@ for batch_size in range(2,14,2):
     print_data_6 = f'{100*percentage_balanced_sets: 0.2f}%'
     print_data_7 = f'{100*(abs(percentage_balanced_sets - calculated_portion_balanced_sets )): 0.2f}%'
     print_data_8 = f'{elapsed_time: f}'
-    with open('eggs.csv', 'a', newline='') as csvfile:
+    with open('eggs10K.csv', 'a', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',')
         spamwriter.writerow([print_data_1, print_data_2,print_data_3,
         print_data_4,print_data_5,print_data_6,print_data_7,print_data_8])
