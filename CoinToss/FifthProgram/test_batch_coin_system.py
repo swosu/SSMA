@@ -5,8 +5,9 @@ import time
 
 print('start of csv code')
 with open('eggs.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    spamwriter = csv.writer(csvfile, delimiter=',')
+    #spamwriter = csv.writer(csvfile, delimiter=' ',
+    #                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
     spamwriter.writerow(['batch size,','percentage,','time in seconds'])
 
 for batch_size in range(2,14,2):
