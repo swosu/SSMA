@@ -8,7 +8,10 @@ with open('eggs.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
     #spamwriter = csv.writer(csvfile, delimiter=' ',
     #                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['batch size,','percentage,','time in seconds'])
+    #spamwriter.writerow(['batch size,','percentage,','time in seconds'])
+    spamwriter.writerow(['batch size','balanced head count','possible outcomes',
+    'possible balanced outcomes','calculated percentage','observed percentage,',
+    'percentage error','time in seconds'])
 
 for batch_size in range(2,14,2):
     repeat_count = 1000000
@@ -39,14 +42,18 @@ for batch_size in range(2,14,2):
     f' percentage {100*percentage_balanced_sets: 0.2f}%'
     f' error percentage {100*(abs(percentage_balanced_sets - calculated_portion_balanced_sets )): 0.2f}%'
     f' time in {elapsed_time: f} seconds.')
-    row_of_data = ""
-    row_of_data += f'{batch_size: d},'
-    row_of_data += f'{100*percentage_balanced_sets: 0.2f}%,'
-    row_of_data += f'{elapsed_time: f}'
+    print_data_1 = f'{batch_size: d}'
+    print_data_2 = f'{balanced_head_count: 0.0f}'
+    print_data_3 = f'{possible_outcomes_count: d}'
+    print_data_4 = f'{balanced_outcomes_count: 0.0f}'
+    print_data_5 = f'{100*calculated_portion_balanced_sets: 0.2f}%'
+    print_data_6 = f'{100*percentage_balanced_sets: 0.2f}%'
+    print_data_7 = f'{100*(abs(percentage_balanced_sets - calculated_portion_balanced_sets )): 0.2f}%'
+    print_data_8 = f'{elapsed_time: f}'
     with open('eggs.csv', 'a', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=' ',
-                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        spamwriter.writerow([row_of_data])
+        spamwriter = csv.writer(csvfile, delimiter=',')
+        spamwriter.writerow([print_data_1, print_data_2,print_data_3,
+        print_data_4,print_data_5,print_data_6,print_data_7,print_data_8])
 
 
 
