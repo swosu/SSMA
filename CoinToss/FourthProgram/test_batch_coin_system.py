@@ -19,4 +19,6 @@ for batch_size in range(2,14,2):
     f' percentage {100*percentage_balanced_sets: 0.2f}%'
     f' time in {elapsed_time: f} seconds.')
 
+
+
 print('End of the program. Take care!')
