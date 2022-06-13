@@ -1,7 +1,7 @@
 import random
 
 user_action = input("Enter a choice (rock, paper, scissors): ")
-possible_actions = ["rock", "paper", "scissors"]
+possible_actions = ["rock", "paper", "scissors", "lizard"]
 computer_action = random.choice(possible_actions)
 print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
 
@@ -22,3 +22,5 @@ elif user_action == "scissors":
         print("Scissors cuts paper! You win!")
     else:
         print("Rock smashes scissors! You lose.")
+elif "lizard" == computer_action:
+    print('you just won the lottery! take a victory lap!')

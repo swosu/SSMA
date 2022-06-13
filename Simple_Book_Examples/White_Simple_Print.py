@@ -1,0 +1,5 @@
+print("Hello Python world!")
+print("Hello Python world!")
+print(";laksdfj;lasdkjf;salkj")
+print("I like purple socks. I can even spell socks like scokss.")
+print("howdy ya'll...")
